@@ -1,0 +1,12 @@
+[package]
+name = "cloud-tui"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+ratatui = { workspace = true }
+crossterm = { workspace = true }
+cloud-core = { path = "../core" }

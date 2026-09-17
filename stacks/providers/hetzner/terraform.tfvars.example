@@ -1,0 +1,19 @@
+# Hetzner Cloud API Token
+hcloud_token = "your_hetzner_api_token"
+
+# Server configuration
+server_name = "hetzner-cx22"
+image       = "ubuntu-22.04"
+location    = "nbg1"  # Nuremberg, Germany
+
+# SSH key configuration
+ssh_public_key_path = "~/.ssh/id_rsa_gitlab.pub"
+
+# Environment tag
+environment = "production"
+
+# Enable backups
+enable_backups = false
+
+# List of IP addresses allowed to connect via SSH
+allowed_ssh_ips = ["0.0.0.0/0"]  # Allow from anywhere (change for production) 

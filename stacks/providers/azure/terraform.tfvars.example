@@ -1,0 +1,60 @@
+# Example terraform.tfvars file
+# Copy to terraform.tfvars and modify as needed
+
+# Basic VM Configuration
+environment      = "development"
+project_name     = "azure-terraform-demo"
+instance_name    = "demo-vm"
+key_data         = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD..."
+location         = "eastus"
+admin_username   = "azureadmin"
+disk_size_gb     = 30
+vm_size          = "Standard_B2s"
+resource_prefix  = "demo"
+
+# Infrastructure Operations
+# Set to true to deallocate all VMs in your subscription
+deallocate_vms = false
+
+# Set to true to prepare for destruction
+prepare_destroy = false
+
+# Set to true to destroy the specific resource groups listed in target_resource_group_names
+destroy_infrastructure = false
+
+# Customize this list to target specific resource groups for destruction
+target_resource_group_names = [
+  "vpswest_resource_group",
+  "newvps_resource_group",
+  "vpngermany_resource_group",
+  "xuigermany-rg",
+  "vpn_service-rg",
+  "THE_LATEST_RESOURCE_GROUP"
+]
+
+# Azure cleanup discovery phase
+scan_azure_resources = true
+
+# Azure cleanup planning phase
+plan_azure_cleanup = true
+
+# Azure cleanup execution phase (set to true only when ready to execute)
+execute_azure_cleanup = false
+
+# Require confirmation for each deletion
+confirm_each_deletion = true
+
+# Specific cleanup targets - use with caution
+target_cleanup_groups = [
+  "web-resource-group",
+  "WEB-RESOURCE-GROUP",
+  "foodshare-resource-group"
+]
+
+# Recovery Services vault cleanup
+target_vault_name = "vault473"
+target_vault_resource_group = "web-resource-group"
+
+# Advanced cleanup options - use with caution
+aggressive_cleanup = false # Set to true for forcing deletion of stubborn resources
+cancel_operations = false # Set to true to attempt canceling pending operations

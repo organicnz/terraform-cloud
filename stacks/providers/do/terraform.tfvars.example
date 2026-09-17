@@ -1,0 +1,12 @@
+# DigitalOcean Configuration
+do_token = "your-do-api-token-here"
+
+# SSH Keys
+pub_key = "~/.ssh/id_ed25519.pub"
+pvt_key = "~/.ssh/id_ed25519"
+ssh_fingerprint = "SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# Droplet Configuration
+droplet_name = "vps"
+region = "fra1"
+droplet_size = "s-1vcpu-1gb"

@@ -1,0 +1,35 @@
+# Oracle Cloud Authentication
+tenancy_ocid     = "ocid1.tenancy.oc1..aaaaaaaaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+user_ocid        = "ocid1.user.oc1..aaaaaaaaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+fingerprint      = "xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx"
+private_key_path = "~/.oci/oci_api_key.pem"
+
+# Region
+region = "eu-frankfurt-1"
+
+# Instance Configuration
+instance_name           = "remnawave-node"
+instance_shape          = "VM.Standard.A1.Flex"
+instance_ocpus          = 1
+instance_memory_in_gbs  = 6
+boot_volume_size_in_gbs = 50
+
+# Network Configuration
+vcn_cidr_block    = "10.0.0.0/16"
+subnet_cidr_block = "10.0.1.0/24"
+allowed_ssh_cidrs = ["0.0.0.0/0"]
+
+# SSH Configuration
+ssh_public_key_path = "~/.ssh/id_ed25519.pub"
+
+# Project Configuration
+environment  = "production"
+project_name = "remnawave"
+
+# Additional Tags
+additional_tags = {
+  Purpose    = "VPN Node"
+  Service    = "Remnawave"
+  ManagedBy  = "Terraform"
+  AlwaysFree = "true"
+}

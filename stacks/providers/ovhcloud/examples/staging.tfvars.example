@@ -1,0 +1,42 @@
+# Staging Environment Configuration Example
+
+# OVHcloud API Credentials
+ovh_endpoint           = "ovh-us"
+ovh_application_key    = "your_staging_application_key"
+ovh_application_secret = "your_staging_application_secret"
+ovh_consumer_key       = "your_staging_consumer_key"
+
+# Environment Configuration
+environment  = "staging"
+project_name = "company-staging"
+
+# VPS Configuration
+vps_name    = "vps-stg-warsaw-1"
+region      = "WAW1"
+flavor_name = "d2-8"
+image_name  = "Ubuntu 25.04"
+
+# SSH Configuration
+ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2E... staging@company.com"
+
+# Backup Configuration (optional for staging)
+enable_backup = false
+backup_cron   = "0 3 * * *"  # Daily at 3 AM UTC
+
+# Security Configuration (more relaxed for staging)
+allowed_ssh_ips = [
+  "203.0.113.0/24",  # Office network
+]
+
+# Monitoring and Recovery
+enable_monitoring = true
+auto_recovery     = true
+
+# Resource Tags
+tags = {
+  Owner       = "DevOps Team"
+  CostCenter  = "Engineering"
+  Environment = "Staging"
+  Backup      = "None"
+  Criticality = "Medium"
+}

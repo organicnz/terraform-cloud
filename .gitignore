@@ -1,0 +1,46 @@
+# terraform binaries, plans, state — never commit
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+terraform.tfvars
+!.terraform.lock.hcl.example
+terraform.tfvars.example
+*.tfvars
+!*.tfvars.example
+!environments/**/*.tfvars
+!examples/**/*.tfvars.example
+.tfvars
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+keys/
+*.tok
+tfplan
+*.tfplan
+destruction_plan.tfplan
+.crash.log
+crash.log
+
+# terraform working dirs
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate.d/
+.snapshots/
+terraform-cloud/target/
+target/
+
+# logs
+*.log
+logs/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# rust
+/target/
+Cargo.lock

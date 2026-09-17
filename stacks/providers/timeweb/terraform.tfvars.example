@@ -1,0 +1,10 @@
+# Timeweb Configuration
+timeweb_token = "your-timeweb-api-token-here"
+
+# SSH Keys
+pub_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... user@example.com"
+pvt_key = "~/.ssh/timeweb_id_ed25519"
+ssh_fingerprint = "SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# Instance Configuration
+instance_name = "web"

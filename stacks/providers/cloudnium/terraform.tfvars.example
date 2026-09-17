@@ -1,0 +1,15 @@
+# Cloudnium / Virtualizor Configuration
+virtualizor_api_key = "your-virtualizor-api-key"
+virtualizor_api_pass = "your-virtualizor-api-password"
+virtualizor_endpoint = "https://cl-ny.cloudnium.net:4085"
+
+# Node Configuration
+node_count = 1
+plan_id = 1
+
+# Surfy Node Configuration
+supabase_url = "https://your-project.supabase.co"
+supabase_key = "your-supabase-service-role-key"
+surfy_reality_dest = "google.com"
+ssh_private_key_path = "~/.ssh/id_rsa"
+os_id = 1000

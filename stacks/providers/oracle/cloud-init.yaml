@@ -1,0 +1,18 @@
+#cloud-config
+hostname: ${hostname}
+fqdn: ${hostname}.localdomain
+manage_etc_hosts: true
+
+packages:
+  - curl
+  - wget
+  - git
+  - htop
+  - vim
+
+runcmd:
+  - echo "Instance provisioned at $(date)" > /var/log/cloud-init-complete.log
+  - systemctl enable ssh
+  - systemctl start ssh
+
+final_message: "Cloud-init complete after $UPTIME seconds"

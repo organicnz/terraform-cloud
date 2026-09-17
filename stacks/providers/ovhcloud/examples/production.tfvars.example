@@ -1,0 +1,44 @@
+# Production Environment Configuration Example
+
+# OVHcloud API Credentials
+ovh_endpoint           = "ovh-us"
+ovh_application_key    = "your_production_application_key"
+ovh_application_secret = "your_production_application_secret"
+ovh_consumer_key       = "your_production_consumer_key"
+
+# Environment Configuration
+environment  = "production"
+project_name = "company-production"
+
+# VPS Configuration
+vps_name    = "vps-prod-warsaw-1"
+region      = "WAW1"
+flavor_name = "d2-8"
+image_name  = "Ubuntu 25.04"
+
+# SSH Configuration
+ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2E... production@company.com"
+
+# Backup Configuration (ENABLED for production)
+enable_backup = true
+backup_cron   = "0 2 * * *"  # Daily at 2 AM UTC
+
+# Security Configuration
+allowed_ssh_ips = [
+  "203.0.113.0/24",      # Office network
+  "198.51.100.42/32",    # VPN gateway
+]
+
+# Monitoring and Recovery (ENABLED for production)
+enable_monitoring = true
+auto_recovery     = true
+
+# Resource Tags
+tags = {
+  Owner       = "DevOps Team"
+  CostCenter  = "Engineering"
+  Environment = "Production"
+  Compliance  = "GDPR"
+  Backup      = "Daily"
+  Criticality = "High"
+}

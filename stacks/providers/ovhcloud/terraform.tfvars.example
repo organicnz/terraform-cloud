@@ -1,0 +1,42 @@
+# OVHcloud API Credentials
+# Get your credentials from: https://us.ovhcloud.com/auth/api/createToken
+
+ovh_endpoint           = "ovh-us"
+ovh_application_key    = "your_application_key"
+ovh_application_secret = "your_application_secret"
+ovh_consumer_key       = "your_consumer_key"
+
+# Environment Configuration
+environment  = "production"  # production, staging, or development
+project_name = "my-ovh-project"
+
+# VPS Configuration
+vps_name    = "vps-warsaw-1"
+region      = "WAW1"        # Warsaw, Poland
+flavor_name = "d2-8"        # 4 vCores, 8GB RAM, 75GB SSD
+image_name  = "Ubuntu 25.04"
+
+# SSH Configuration - Choose ONE option:
+# Option 1: Upload your SSH public key
+ssh_public_key = ""  # e.g., "ssh-rsa AAAAB3NzaC1yc2E... your-email@example.com"
+
+# Option 2: Use existing OVHcloud SSH key IDs
+ssh_key_ids = []  # e.g., ["key-id-1", "key-id-2"]
+
+# Backup Configuration
+enable_backup = false         # Set to true to enable automated backup ($0.50/month)
+backup_cron   = "0 2 * * *"  # Daily at 2 AM UTC
+
+# Security Configuration
+allowed_ssh_ips = []  # e.g., ["203.0.113.0/24", "198.51.100.42/32"]
+
+# Monitoring and Recovery
+enable_monitoring = true
+auto_recovery     = true
+
+# Resource Tags
+tags = {
+  Owner       = "DevOps Team"
+  CostCenter  = "Engineering"
+  Compliance  = "GDPR"
+}

@@ -1,0 +1,40 @@
+# Development Environment Configuration Example
+
+# OVHcloud API Credentials
+ovh_endpoint           = "ovh-us"
+ovh_application_key    = "your_dev_application_key"
+ovh_application_secret = "your_dev_application_secret"
+ovh_consumer_key       = "your_dev_consumer_key"
+
+# Environment Configuration
+environment  = "development"
+project_name = "company-dev"
+
+# VPS Configuration
+vps_name    = "vps-dev-warsaw-1"
+region      = "WAW1"
+flavor_name = "d2-8"
+image_name  = "Ubuntu 25.04"
+
+# SSH Configuration
+ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2E... dev@company.com"
+
+# Backup Configuration (disabled for development)
+enable_backup = false
+
+# Security Configuration (open for development)
+allowed_ssh_ips = []  # Allow all (not recommended for production)
+
+# Monitoring and Recovery
+enable_monitoring = false
+auto_recovery     = false
+
+# Resource Tags
+tags = {
+  Owner       = "Development Team"
+  CostCenter  = "Engineering"
+  Environment = "Development"
+  Backup      = "None"
+  Criticality = "Low"
+  AutoShutdown = "Enabled"
+}

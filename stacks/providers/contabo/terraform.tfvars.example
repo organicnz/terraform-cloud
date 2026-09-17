@@ -1,0 +1,56 @@
+# Contabo API Credentials - Get these from your Contabo Customer Control Panel
+# Go to: Customer Control Panel → API Settings
+contabo_client_id     = "INT-XXXXXXXX"  # Your Client ID from Contabo API Settings
+contabo_client_secret = "your-client-secret-here"  # Your Client Secret from Contabo API Settings  
+contabo_user          = "your-email@example.com"  # Your API User (usually your email)
+contabo_password      = "your-api-password-here"  # Your API Password (NOT your login password)
+
+# Instance Configuration for Cloud VPS
+instance_name = "vps"
+product_id    = "VPS-2-SSD-20"  # VPS 10 equivalent - 3 vCPU, 8GB RAM, 150GB SSD
+region        = "EU"  # Available: EU, US-central, US-east, US-west, SIN
+
+# SSH Configuration  
+ssh_keys       = []  # Add SSH key IDs if you have them uploaded to Contabo
+ssh_private_key_path = "~/.ssh/your_key.pem"  # Path to your private SSH key file
+admin_user     = "ubuntu"
+ssh_allowed_ips = "0.0.0.0/0"  # SECURITY: Restrict this to your IP for better security
+
+# Optional Features
+enable_object_storage    = false  # Set to true to enable S3-compatible object storage
+enable_private_network   = false  # Set to true to enable private networking
+enable_security_group    = true   # Recommended: Keep enabled for firewall protection
+enable_snapshots        = false   # Set to true to enable automatic snapshots
+
+# Environment and Tagging
+environment = "dev"  # Options: dev, staging, prod
+add_ons     = []     # Additional add-ons for the instance
+
+tags = {
+  Environment = "dev"
+  Project     = "vps"
+  ManagedBy   = "terraform"
+  Owner       = "your-name"
+}
+
+# Object Storage Configuration (if enabled)
+storage_size_limit_tb = 1  # TB
+
+# Private Network Configuration (if enabled)
+private_network_cidr = "10.0.0.0/24"
+
+# Custom Firewall Rules (optional)
+custom_ports = [
+  {
+    protocol  = "tcp"
+    from_port = 8080
+    to_port   = 8080
+    ip_range  = "0.0.0.0/0"
+  },
+  {
+    protocol  = "tcp"
+    from_port = 3000
+    to_port   = 3000
+    ip_range  = "0.0.0.0/0"
+  }
+] 
