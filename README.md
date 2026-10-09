@@ -35,3 +35,9 @@ make plan STACK=terraform-hetzner
 - Azure: `subscription_id` defaults to the free Azure for Students subscription
   (`97e7954d-922c-49e9-b244-68753e6b316c`). Override via `TF_VAR_subscription_id` if needed.
 - Secrets must be seeded and used via vars files, never committed to version control.
+- Phase 3 hardening in progress: remote backends (s3+lock), `sensitive=true` on outputs,
+  `sops`/env secrets integration, and CI `fmt/validate/tflint/tfsec` are pending.
+
+## Next steps
+
+Run `make list` to discover stacks, or `cargo run -p cloud-tui` to start the TUI selector.
