@@ -1,6 +1,7 @@
 # Configure Azure Resource Manager provider to use Azure CLI authentication
 provider "azurerm" {
   skip_provider_registration = true
+  subscription_id            = var.subscription_id
   # Using Azure CLI authentication
   # Run 'az login' before running Terraform commands
   features {

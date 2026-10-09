@@ -12,6 +12,12 @@ variable "project_name" {
   description = "Name of the project"
 }
 
+variable "subscription_id" {
+  type        = string
+  description = "Azure subscription ID to deploy into. Defaults to the free Azure for Students subscription."
+  default     = "97e7954d-922c-49e9-b244-68753e6b316c"
+}
+
 # Network related variables are commented out but kept for reference
 # variable "network" {}
 # variable "subnet" {}
@@ -35,7 +41,7 @@ variable "key_data" {
 variable "location" {
   description = "Location of the Azure resource group"
   type        = string
-  default     = "Germany West Central"
+  default     = "eastasia"
 }
 
 variable "admin_username" {

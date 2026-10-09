@@ -1,0 +1,32 @@
+# GitHub Actions self-hosted runner — free tier stack
+#
+# Deploy with:
+#   cd stacks/providers/azure/runner
+#   terraform init
+#   terraform plan
+#   terraform apply
+#
+# Required in terraform.tfvars (gitignored):
+#   github_token = "<registration token, expires ~1h>"
+#   github_repo  = "owner/repo"     # or set github_org for an org-level runner
+#
+# Cost model: Standard_B2ats_v2 (2 vCPU / 4 GiB) is within the 750 h/month
+# free allowance, 64 GB Premium_LRS disk matches the free P6 allowance, and
+# there is no public IP — the runner dials out to GitHub to poll for jobs.
+# Staying under 750 h means nothing is billed.
+#
+# NOTE: a 24/7 VM is ~744 h/month, just inside the 750 h cap. If the month
+# has a partial overage, or a second VM is ever added, it starts billing
+# against the $100 student credit.
+
+subscription_id = "97e7954d-922c-49e9-b244-68753e6b316c"
+
+github_repo = ""
+github_org  = ""
+
+runner_name   = ""
+runner_labels = "self-hosted,linux,x64"
+
+admin_username = "runneradmin"
+location       = "eastasia"
+vm_size        = "Standard_B2ats_v2"

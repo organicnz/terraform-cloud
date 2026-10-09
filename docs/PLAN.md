@@ -28,6 +28,8 @@ Secrets on disk in 8/9 stacks — must not copy secrets into new repo.
 - Added explicit `backend local` per stack except contabo/oracle/ovhcloud (keep original).
 - Fixed cloudnium: removed unavailable `anschoewe/virtualizor` provider dependency,
   removed `virtualizor_vps` resource, updated outputs. Now init + validate success.
+- Azure: added `subscription_id` variable with default for Azure for Students subscription,
+  updated `provider.tf` with `subscription_id`, changed `location` default to `eastasia`.
 
 ## Phase 3 — harden
 Remote backend per stack (s3+lock), `sensitive=true` everywhere,

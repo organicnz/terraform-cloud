@@ -32,3 +32,4 @@ make plan STACK=terraform-hetzner
 - Never `apply` from TUI without explicit `plan` first.
 - Secrets stay in `TF_VAR_*` / ignored `.env`, never committed.
 - Each stack keeps its own `terraform.tfstate` until remote backend migration.
+- Azure: `subscription_id` defaults to the free Azure for Students subscription (`97e7954d-922c-49e9-b244-68753e6b316c`). Override via `TF_VAR_subscription_id` if needed.
